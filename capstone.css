@@ -1,0 +1,141 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    background-color: rgb(249, 242, 227);
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    font-family: 'Noto Serif KR', serif;
+}
+main{
+    height: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+header{
+    height: 10%;
+    overflow: hidden;
+}
+object{
+    position: absolute;
+    width: 450px;
+    height: 630px;
+    left: 35px;
+    top:80px;
+    z-index: -1;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+    height: 630px;
+}
+li{
+    list-style: none;
+    margin: 0px;
+}
+#header{
+    font-size: 250%;
+    margin: 10px 20px;
+    color: #808080;
+}
+#region_info{
+    flex-basis: 55%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+#region_info_map{
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#region_info_typo{
+    width: 150px;
+    height: 630px;
+}
+#region_info_typo_sene{
+    width: 100%;
+    height: 80%;
+    margin-top: 70px;
+}
+
+.region_info_typo_sene_face{
+    width: 50px;
+    height: 50px;
+    margin: 0px;
+    position: relative;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    font-size: 280%;
+}
+.region_info_typo_sene_face:nth-child(1){
+    animation: filp 4.5s infinite;
+}
+.region_info_typo_sene_face:nth-child(2){
+    animation: filp 4.5s 0.2s infinite;
+}
+.region_info_typo_sene_face:nth-child(3){
+    animation: filp 4.5s 0.4s infinite;
+}
+.region_info_typo_sene_face:nth-child(4){
+    animation: filp 4.5s 0.6s infinite;
+}
+.region_info_typo_sene_face:nth-child(5){
+    animation: filp 4.5s 0.8s infinite;
+}
+.region_info_typo_sene_face:nth-child(6){
+    animation: filp 4.5s 1s infinite;
+}
+.region_info_typo_sene_face:nth-child(7){
+    animation: filp 4.5s 1.2s infinite;
+}
+@keyframes filp {
+    0%{transform:rotateY(0deg)}
+    40%{transform: rotateY(180deg);}
+    80%{transform:rotateY(0deg)}
+}
+.typo_ele{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    position: absolute;
+}
+.region_info_typo_sene_face_front{
+    background-color: rgb(249, 242, 227);
+    transform: translateZ(0.1px);
+}
+.region_info_typo_sene_face_back{
+    background-color: rgb(249, 242, 227);
+    transform: rotateY(-180deg) translateZ(0.1px);
+    
+}
+#region_info_weather{
+    width: 130px;
+    height: 630px;
+}
+.weather_info{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+.weather_info:nth-child(1){
+    margin-top: 10px;
+}
+#video_list{
+    flex-basis: 45%;
+}
+#video_list_box{
+    width:630px;
+    margin: 0px;
+}
+.pop_up_box{
+    border-radius: 23px;
+    background-color: rgb(255, 251, 242);
+    box-shadow: 3px 3px 6px 4px rgba(0, 0, 0, 0.05);
+}
