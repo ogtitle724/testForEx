@@ -7,62 +7,19 @@
     <title>nearby( )</title>
     <link rel="stylesheet" href="capstone.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- 로컬 assets 파일에 저장된 JSON 파일 지정 -->
-    <script type="text/javascript" src="https://ogtitle724.github.io/testForEx/data_서울 맛집.json"></script>    
-    <!-- 내부 JS 지정 -->
-    <script>
 
-    	/*
-    	[JS 요약 설명]
-    	1. window.onload : 웹페이지 로드 완료 상태를 나타냅니다
-    	2. JSON.stringify : json 형식 데이터를 문자열로 나타내줍니다
-    	3. JSON.parse : json 데이터를 파싱해서 사용합니다
-    	4. 참고 : 로컬에 저장되는 json 파일에서 특정 변수명을 지정해줘야 정상적으로 json 파일을 로드할 수 있습니다    	
-    	*/
+ 
+    
 
-   	
-    	
-    	/* [html 최초 로드 및 이벤트 상시 대기 실시] */
-    	window.onload = function() {
-    		console.log("");
-    		console.log("[window onload] : [start]");
-    		console.log(""); 
-
-    		// [이벤트 함수 호출]
-    		main();
-    	}; 		
-
-
-
-    	/* [이벤트 수행 함수] */
-    	function main(){
-    		console.log("");
-    		console.log("[main] : [start]"); 
-    		console.log("");
-
-
-    		//로컬 assets 파일에 저장된 json 파일 읽기 실시 [json 파일에 선언된 변수이름으로 호출해야합니다]
-    		var jsonData = JSON.parse(JSON.stringify(Params));
-    		console.log("");
-    		console.log("[main] : [jsonData] : " + JSON.stringify(jsonData)); 
-    		console.log("");
-
-
-    		//json 데이터 파싱 실시
-    		console.log("");
-    		console.log("[main] : [idx] : " + jsonData.idx); 
-    		console.log("[main] : [name] : " + jsonData.name); 
-    		console.log("[main] : [program] : " + JSON.stringify(jsonData.program)); 
-    		console.log("");
-
-    	};
-    	
-    </script>
+</script>
 </head>
 <body>
+    <div id="back_img"></div>
     <header>
-        <h1 id="header">nearby( )</h1>
+        <h1 id="header">nearby (&nbsp&nbsp)</h1>
     </header>
     <main>
         <section id="region_info">
@@ -73,67 +30,78 @@
                 <div id="region_info_typo_sene">
                     <div id="typoBox1" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele">서</div>
-                        <div class="region_info_typo_sene_face_back typo_ele">서</div>
                     </div>
                     <div id="typoBox2" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele">울</div>
-                        <div class="region_info_typo_sene_face_back typo_ele">울</div>
                     </div>
                     <div id="typoBox3" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele">특</div>
-                        <div class="region_info_typo_sene_face_back typo_ele">특</div>
                     </div>
                     <div id="typoBox4" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele">별</div>
-                        <div class="region_info_typo_sene_face_back typo_ele">별</div>
                     </div>
                     <div id="typoBox5" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele">시</div>
-                        <div class="region_info_typo_sene_face_back typo_ele">시</div>
                     </div>
                     <div id="typoBox6" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele"></div>
-                        <div class="region_info_typo_sene_face_back typo_ele"></div>
                     </div>
                     <div id="typoBox7" class="region_info_typo_sene_face">
                         <div class="region_info_typo_sene_face_front typo_ele"></div>
-                        <div class="region_info_typo_sene_face_back typo_ele"></div>
                     </div>
                 </div>
             </article>
-            <article id="region_info_weather" class="pop_up_box">
-                <div class="weather_info">
-                    <a href="" class="weather_info_text">
-                        <span class="weather_info_text_date"></span>
-                        <span class="weather_info_text_temp"></span>
-                        <img id="img_icon_weather" src="" alt="">
-                    </a>
+            <article id="weather_info" class="pop_up_box">
+                <div id ="weather" class="weather_info_box1">
+                    <img class="weather_info_sky" src="/image/icon/weather/mist.png" alt="">
+                </div>
+                <div id ="temp" class="weather_info_box2">
+                    <img class="weather_info_img" src="/image/icon/weather/temp.png" alt="">
+                    <span id="temp_text" class="weather_info_text"></span>
+                </div>
+                <div id ="temp_feel" class="weather_info_box2">
+                    <img class="weather_info_img" src="/image/icon/weather/human.png" alt="">
+                    <span id="temp_feel_text" class="weather_info_text"></span>
+                </div>
+                <div id ="wind" class="weather_info_box2">
+                    <img class="weather_info_img" src="/image/icon/weather/wind.png" alt="">
+                    <span id="wind_text" class="weather_info_text"></span>
+                </div>
+                <div id ="hum" class="weather_info_box2">
+                    <img class="weather_info_img" src="/image/icon/weather/humidity.png" alt="">
+                    <span id="hum_text" class="weather_info_text"></span>
                 </div>
 
             </article>
         </section>
         <article id="video_list">
             <div id="video_list_box" class="pop_up_box">
-                <div class="check_box">
-                    <div class="check_box_icon"></div>
-                    <div class="check_box_icon"></div>
-                    <div class="check_box_icon"></div>
+                <div id = "video_window">
+                    <div id="cover">
+                        <iframe id = "video_window_ifram" width = "380px" height="218"  name="videoWindow"></iframe> 
+                    </div>
                 </div>
-                <li class="video_list">
-                    <ul class="video_list_each">
-                        <a href="" class="video_list_each_a">
-                            <img src="" alt="">
-                        </a>
-                        <div class="video_list_each_info">
-                            <a href="" class="video_list_each_view"></a>
-                            <a href="" class="video_list_each_title"></a>
+                <div class="video_list">
+                    <div id="scroll">
+                        <div id="infomation">&nbsp노란색으로 칠해진 부분 중 원하시는 지역을 클릭해주세요.</div>
+                        <div id="video_list_for_clone" class="video_list_each">
+                            <a target="videoWindow" href="none" class="video_list_each_a">
+                                <div id="thumb_nail">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="video_list_each_info">
+                                    <p href="none" class="video_list_each_view">1.2만회</p>
+                                    <p href="none" class="video_list_each_title">여기에 제목 여기에 제목 여기에 제목 여기에 제목 여기에</p>
+                                </div>
+                            </a>
                         </div>
-                    </ul>
-                </li>
+                    </div>
+                </div>
             </div>
         </article>
     </main>
-    <script src="canvas.js"></script>
+
     <script src="data.js"></script>
- </body>
+    <script src="main.js"></script>
+</body>
 </html>

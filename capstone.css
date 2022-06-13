@@ -3,11 +3,16 @@ html{
     width: 100%;
 }
 body{
-    background-color: rgb(249, 242, 227);
+    color: rgb(0, 0, 0);
+    overflow: auto;
+    background :whitesmoke url('/image/cloud.jpg');
+    background-position: center;
+    background-size: cover;
+    background-color: rgb(2, 1, 25,0.9);
     height: 100vh;
     width: 100%;
     margin: 0;
-    font-family: 'Noto Serif KR', serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 main{
     height: 90%;
@@ -20,27 +25,30 @@ header{
     height: 10%;
     overflow: hidden;
 }
-object{
+a{
+    text-decoration: none;
+}
+#back_img{
+    background-color: rgb(2, 1, 25,0.89);
     position: absolute;
-    width: 450px;
-    height: 630px;
-    left: 35px;
-    top:80px;
+    height: 100%;
+    width: 40%;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
     z-index: -1;
 }
-ul{
-    margin: 0px;
-    padding: 0px;
-    height: 630px;
-}
-li{
-    list-style: none;
-    margin: 0px;
+#infomation{
+    display: inline-block;
+    margin: 50px auto;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    
 }
 #header{
-    font-size: 250%;
-    margin: 10px 20px;
-    color: #808080;
+    font-size: 200%;
+    margin: 20px 40px;
+    color: rgba(220, 220, 220, 0.621);
+    filter: blur(0.3px);
 }
 #region_info{
     flex-basis: 55%;
@@ -50,10 +58,12 @@ li{
     align-items: flex-start;
 }
 #region_info_map{
+    margin-top: 50px;
     width: 500px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    cursor: pointer;
 }
 #region_info_typo{
     width: 150px;
@@ -62,17 +72,20 @@ li{
 #region_info_typo_sene{
     width: 100%;
     height: 80%;
-    margin-top: 70px;
+    margin-top: 60px;
 }
 
 .region_info_typo_sene_face{
-    width: 50px;
-    height: 50px;
+    filter: blur(0.3px);
+    width: 60px;
+    height: 60px;
     margin: 0px;
     position: relative;
     transform: perspective(1000px);
     transform-style: preserve-3d;
-    font-size: 280%;
+    font-size: 50px;
+    text-align: center;
+    color: rgba(220, 220, 220, 0.621);
 }
 .region_info_typo_sene_face:nth-child(1){
     animation: filp 4.5s infinite;
@@ -97,8 +110,7 @@ li{
 }
 @keyframes filp {
     0%{transform:rotateY(0deg)}
-    40%{transform: rotateY(180deg);}
-    80%{transform:rotateY(0deg)}
+    70%{transform:rotateY(360deg)}
 }
 .typo_ele{
     width: 100%;
@@ -107,35 +119,152 @@ li{
     position: absolute;
 }
 .region_info_typo_sene_face_front{
-    background-color: rgb(249, 242, 227);
     transform: translateZ(0.1px);
 }
-.region_info_typo_sene_face_back{
-    background-color: rgb(249, 242, 227);
-    transform: rotateY(-180deg) translateZ(0.1px);
-    
-}
-#region_info_weather{
+
+#weather_info{
+    margin-left: 100px;
     width: 130px;
     height: 630px;
 }
-.weather_info{
+.weather_info_box1{
     height: 100px;
     width: 100px;
-    margin: auto;
+    margin: 10px auto;
+    margin-top: 50px;
+    text-align: center;
+    margin-top: 40px;
 }
-.weather_info:nth-child(1){
-    margin-top: 10px;
+.weather_info_box2{
+    height: 100px;
+    width: 100px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
+.weather_info_text{
+    height: 35%;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+.weather_info_sky{
+    height: 75%;
+    width: 75%;
+}
+.weather_info_img{
+    height: 45px;
+    width: 45px;
+    
+}
+
+
 #video_list{
-    flex-basis: 45%;
+    flex-basis: 42%;
 }
 #video_list_box{
-    width:630px;
+    width:610px;
+    height: 630px;
     margin: 0px;
 }
+#video_window{
+    display:flex;
+    width : 100%;
+    height :250px;
+    justify-content: center;
+    align-items: center;
+}
+#cover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 378px;
+    height : 211px;
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+#video_window_ifram{
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 3px 3px 6px 5px rgba(0, 0, 0, 0.05);
+}
+.video_list{
+    overflow: hidden;
+    display: inline-block;
+    margin:30px;
+    margin-top: 6px;
+    width: 550px;
+    height: 55%;
+}
+#scroll{
+    margin-left: 15px;
+    width: 103%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#video_list_for_clone{
+    display: none;
+}
+.video_list_each{
+    width: 500px;
+    height: 60px;
+}
+.video_list_each_a{
+    margin: 15px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+#thumb_nail{
+    width: 100px;
+    height: 55px;
+    border-radius: 10px;
+    background-image: url('image/icon/ylogo.svg');
+    background-position: center;
+    background-size: cover;
+}
+.video_list_each_info{
+    width: 75%;
+    height: 55px;
+    position: relative;
+}
+.video_list_each_view{
+    position: absolute;
+    top: 0px;
+    display: inline-block;
+    margin: 0;
+    width: 100%;
+    height: 30%;
+    color: black;
+    font-size: 15px;
+    font-weight: bolder;
+
+}
+.video_list_each_title{
+    position: absolute;
+    top: 20px;
+    display: inline-block;
+    margin: 0;
+    margin-top: 2px;
+    width: 100%;
+    height: 70%;
+    overflow-y: hidden;
+    color: black;
+    
+    font-size: 13px;
+    font-weight: 550;
+}
+
 .pop_up_box{
     border-radius: 23px;
-    background-color: rgb(255, 251, 242);
-    box-shadow: 3px 3px 6px 4px rgba(0, 0, 0, 0.05);
+    background-color: rgb(252, 252, 252,0.56);
+    box-shadow: 3px 3px 6px 4px rgba(0, 0, 0, 0.2);
 }

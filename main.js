@@ -1,4 +1,4 @@
-//지도 데이터
+//지도 및 지명 출력용 데이터
 const gg = [[102,158,163],[111,154,176],[120,143,191],[130,134,201],[139,134,201],[149,125,201],[159,134,150],[159,172,205],[168,135,140],[168,182,215],[178,181,225],[188,144,223],[197,144,211],[206,143,210],[216,144,201],[225,153,191]];
 const sl = [[159,156,165],[168,146,175],[178,144,175]];
 const gw = [[82,263,269],[91,182,230],[92,249,269],[101,173,278],[111,182,278],[121,202,287],[131,211,288],[140,211,297],[150,211,306],[160,211,316],[170,221,326],[180,231,327],[190,230,337],[200,221,336],[210,220,230],[210,268,340],[219,278,336]];
@@ -17,10 +17,11 @@ const gj = [[418,132,157],[428,132,157]];
 const dd = [[197,408,415]];
 const jj = [[545,107,146],[555,97,146],[565,97,136]];
 const region = [gg,sl,gw,cn,cb,sj,dj,gb,gn,bs,us,dg,jb,jn,gj,dd,jj]
+const region_name = ['경기','서울','강원','충청','충청','세종','대전','경북','경남','부산','울산','대구','전북','전남','광주','독도','제주']
 const len_region = region.length
-const city = [sl,sj,dj,dg,us,bs,gj]
+const city = [sl,sj,dj,dg,us,bs,gj,jj]
 const len_city = city.length
-const others = [gg,gw,cn,cb,gb,gn,jb,jn,dd,jj]
+const others = [gg,gw,cn,cb,gb,gn,jb,jn,dd]
 const len_others = others.length
 const region_words = [
     ['경','서','강','충','충','세','대','경','경','부','울','대','전','전','광','독','제'],
@@ -33,6 +34,9 @@ const region_words = [
 ]
 const len_region_words = region_words.length
 
+//넘기기용 전역 변수
+let which = 2;
+let select = 1;
 
 //요소 선택
 const canvas = document.getElementById("canvas_komap");
@@ -46,8 +50,8 @@ canvas.height = 630;
 
 //지도 변수
 const r = 1.5;
-const color ='#0c3025'
-colot_city = '#2D2BF5'
+const color ='#74777c'
+colot_city = '#efcd67'
 space = 1.4
 
 
@@ -64,7 +68,7 @@ if (canvas.getContext){
 
     }
     //데이터에 부합하는 그리기 함수 정의
-    const draw = function(arr,r,color,space,hTime=30,vTime=200){
+    const draw = function(arr,r,color,space,hTime=30,vTime=170){
         const len_arr = arr.length
         for(let i = 0; i<len_arr;i++){
             const len = arr[i].length
@@ -95,47 +99,103 @@ if (canvas.getContext){
             draw(city[i],r,color,space,40)
         }
     }
-    const drawborder = function(arr,r,color,space,hTime=30,vTime=200){
-        const len_arr = arr.length
-        for(let i = 0; i<len_arr;i++){
-            const len = arr[i].length
-            setTimeout(function(){
-                if (len == 2){
-                    setTimeout(function(){
-                        drawDot(arr[i][1],arr[i][0],r,color)
-                    },250*i)
-                }
-                else{
-                    drawDot(arr[i][1],arr[i][0],r,color)
-                    drawDot(arr[i][1],arr[i][0],r,color)
-                }
-            },vTime*i)
-        }
-    }
     //basic map generate
     OthersSingleColor(color);
     CitySingleColor(colot_city);
     
-
-
     canvas.addEventListener('mouseup',(e)=>{
         let x_clk = e.offsetX;
         let y_clk = e.offsetY;
-        let count = 0;
         for (let i = 0; i < len_region; i++){
             for(idx of region[i]){
                 if ((Math.abs(idx[0]-y_clk) <= 5) && (x_clk > idx[1]) && (x_clk < idx[2])){
+                    
+                    which = i;
+
                     for (let c = 0; c<len_region_words; c++){
                         (function(x){
                             setTimeout(function(){
                                 typo_face.item(x).innerHTML = region_words[x][i]
-                            
                             },150*x)
                         })(c)
                     }
+
+                    if (cit.includes(region_name[i])){
+
+                        let clone = $("#video_list_for_clone").clone()
+                        $('#scroll').empty()
+                        $('#scroll').append(clone)
+                        
+
+                        let Data_idx = cit.indexOf(region_name[i])
+                        let len_list = Data[Data_idx].length
+                        
+                        seleted_city = cit_eng[Data_idx]
+                        let API_URL_OpenWeatherMap = `http://api.openweathermap.org/data/2.5/weather?q=${seleted_city}&appid=4655c63f3d92ea9e4118bbfb3ae27d30`;
+                        
+                        let SetWeather = function(){
+                            fetch(API_URL_OpenWeatherMap)     
+                                .then((response) => response.json())
+                                .then((data) => 
+                                    setWeather(data)
+                                    );
+                            let setWeather = function(data){
+                                let tem = data['main']['temp']-273.15
+                                let feel = data['main']['feels_like']-273.15
+                                let hum = data['main']['humidity']
+                                let wind = data['wind']['speed']
+                                let sky = data['weather']['0']['main']
+                                console.log(data)
+                                $("#temp_text").html(tem.toFixed(2)+'℃')
+                                $("#temp_feel_text").html(feel.toFixed(2)+'℃')
+                                $("#wind_text").html(wind+'m/s')
+                                $("#hum_text").html(hum+'%')
+                                console.log(sky)
+                                if((sky.includes('clear'))||(sky.includes('Clear'))){
+                                    $('#weather').attr('background-image','https://www.flaticon.com/free-icons/cloudy')
+
+                                }else if((sky.includes('clouds'))||(sky.includes('Clouds'))){
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/cloud.png')
+                                }else if((sky.includes('snow'))||(sky.includes('Snow'))){
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/snow.png')                                  
+                                }else if((sky.includes('rain'))||(sky.includes('Rain'))){
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/rain.png')                                   
+                                }else if((sky.includes('thunderstorm'))||(sky.includes('Thunderstorm'))){
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/thunder.png')                                   
+                                }else if((sky.includes('mist'))||(sky.includes('Mist'))){
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/mist.png')
+                                }
+
+
+                            }
+                        }
+                        SetWeather()
+                    
+
+                        //for 문으로 돌려서 여러 자식요소 붙이려 했는데 안됨, 인스턴스 함수만든 후 함수로 돌리면 됨. 왜그럴까?
+                        let appendList = function(num_list){
+                            
+                            $('#video_list_for_clone').find('p:eq(0)').html(Data[Data_idx][num_list][1])
+                            $('#video_list_for_clone').find('p:eq(1)').html(Data[Data_idx][num_list][0])
+                            let clone = $("#video_list_for_clone").clone().css('display','block')
+                            
+                            $('#scroll').append(clone)
+                            address = Data[Data_idx][num_list][2]
+                            idx = address.indexOf('=')+1
+                            address = address.slice(idx)
+                            address = 'https://www.youtube.com/embed/'+address+'?autoplay=1&mute=1'
+                            $('#scroll>div:last').find('a').attr('href',address)
+
+                        }
+
+                        for(let num_list = 0; num_list<len_list-1; num_list++){
+                            appendList(num_list)
+                        }
+                    
+                    }
+                    
                 }
             }
-            count++;
         }
     })
 
