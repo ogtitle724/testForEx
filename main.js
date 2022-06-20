@@ -153,17 +153,17 @@ if (canvas.getContext){
                                 $("#hum_text").html(hum+'%')
                                 console.log(sky)
                                 if((sky.includes('clear'))||(sky.includes('Clear'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/sun.png')
+                                    $('.weather_info_sky').attr('src','image/icon/weather/sun.png')
                                 }else if((sky.includes('clouds'))||(sky.includes('Clouds'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/cloud.png')
+                                    $('.weather_info_sky').attr('src','image/icon/weather/cloud.png')
                                 }else if((sky.includes('snow'))||(sky.includes('Snow'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/snow.png')                                  
+                                    $('.weather_info_sky').attr('src','image/icon/weather/snow.png')                                  
                                 }else if((sky.includes('rain'))||(sky.includes('Rain'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/rain.png')                                   
+                                    $('.weather_info_sky').attr('src','image/icon/weather/rain.png')                                   
                                 }else if((sky.includes('thunderstorm'))||(sky.includes('Thunderstorm'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/thunder.png')                                   
+                                    $('.weather_info_sky').attr('src','image/icon/weather/thunder.png')                                   
                                 }else if((sky.includes('mist'))||(sky.includes('Mist'))){
-                                    $('.weather_info_sky').attr('src','/image/icon/weather/mist.png')
+                                    $('.weather_info_sky').attr('src','image/icon/weather/mist.png')
                                 }
 
 
