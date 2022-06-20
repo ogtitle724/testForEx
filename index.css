@@ -4,8 +4,8 @@ html{
 }
 body{
     color: rgb(0, 0, 0);
-    overflow: auto;
-    background :whitesmoke url('/image/cloud.jpg');
+    overflow: hidden;
+    background :whitesmoke url('https://raw.githubusercontent.com/ogtitle724/testForEx/main/image/cloud.png');
     background-position: center;
     background-size: cover;
     background-color: rgb(2, 1, 25,0.9);
@@ -123,7 +123,7 @@ a{
 }
 
 #weather_info{
-    margin-left: 100px;
+    margin-left: 50px;
     width: 130px;
     height: 630px;
 }
