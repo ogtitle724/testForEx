@@ -138,7 +138,8 @@ if (canvas.getContext){
                                 .then((response) => response.json())
                                 .then((data) => 
                                     setWeather(data)
-                                    );
+                                    )
+
                             let setWeather = function(data){
                                 let tem = data['main']['temp']-273.15
                                 let feel = data['main']['feels_like']-273.15
@@ -152,8 +153,7 @@ if (canvas.getContext){
                                 $("#hum_text").html(hum+'%')
                                 console.log(sky)
                                 if((sky.includes('clear'))||(sky.includes('Clear'))){
-                                    $('#weather').attr('background-image','https://www.flaticon.com/free-icons/cloudy')
-
+                                    $('.weather_info_sky').attr('src','/image/icon/weather/sun.png')
                                 }else if((sky.includes('clouds'))||(sky.includes('Clouds'))){
                                     $('.weather_info_sky').attr('src','/image/icon/weather/cloud.png')
                                 }else if((sky.includes('snow'))||(sky.includes('Snow'))){
