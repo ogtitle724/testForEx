@@ -17,7 +17,7 @@ body{
 main{
     height: 90%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around;
     align-items: stretch;
 }
@@ -55,7 +55,7 @@ a{
 #region_info{
     flex-basis: 55%;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
 }
