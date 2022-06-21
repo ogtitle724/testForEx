@@ -38,7 +38,7 @@ a{
 }
 #infomation{
     display: inline-block;
-    margin: 50px auto;
+    margin: auto;
     font-size: 17px;
     font-weight: bolder;
     color: rgb(0, 0, 0);
@@ -228,7 +228,7 @@ a{
 #thumb_nail{
     width: 90px;
     height: 50px;
-    margin-left:15px
+    margin-left:15px;
     border-radius: 10px;
     background-image: url('image/icon/ylogo.svg');
     background-position: center;
