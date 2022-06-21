@@ -203,7 +203,7 @@ a{
     height: 50%;
 }
 #scroll{
-    width: 105%;
+    width: 104%;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -227,14 +227,13 @@ a{
 #thumb_nail{
     width: 90px;
     height: 50px;
-    margin-left : 10px;
     border-radius: 10px;
     background-image: url('image/icon/ylogo.svg');
     background-position: center;
     background-size: cover;
 }
 .video_list_each_info{
-    width: 80%;
+    width: 75%;
     height: 55px;
     position: relative;
 }
