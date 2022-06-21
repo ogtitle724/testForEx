@@ -124,8 +124,9 @@ a{
 
 #weather_info{
     margin-left: 50px;
-    width: 130px;
-    height: 630px;
+    margint-top : 20px
+    width: 110px;
+    height: 580px;
 }
 .weather_info_box1{
     height: 100px;
@@ -166,8 +167,9 @@ a{
     flex-basis: 42%;
 }
 #video_list_box{
-    width:610px;
-    height: 630px;
+    margin-top : 20px;
+    width: 570px;
+    height: 580px;
     margin: 0px;
 }
 #video_window{
