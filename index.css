@@ -39,7 +39,8 @@ a{
 #infomation{
     display: inline-block;
     margin: 50px auto;
-    font-size: 20px;
+    margin-left : 10px;
+    font-size: 10px;
     font-weight: bolder;
     color: rgb(0, 0, 0);
     
