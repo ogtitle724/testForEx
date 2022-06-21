@@ -58,7 +58,7 @@ a{
     align-items: flex-start;
 }
 #region_info_map{
-    margin-top: 50px;
+    margin-top: 20px;
     width: 500px;
     display: flex;
     flex-direction: row;
