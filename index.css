@@ -172,7 +172,7 @@ a{
 #video_list_box{
     margin-top : 20px;
     min-width: 570px;
-    width : 80%;
+    width : 90%;
     margin: 0px;
 }
 #video_window{
@@ -202,8 +202,8 @@ a{
     display: inline-block;
     margin:30px;
     margin-top: 6px;
-    width: 510px;
-    height: 50%;
+    width: 90%;
+    height: 70%;
 }
 #scroll{
     position:relative;
