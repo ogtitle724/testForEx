@@ -204,7 +204,7 @@ a{
     margin:30px;
     margin-top: 50px;
     width: 90%;
-    height: 55%;
+    height: 58%;
 }
 #scroll{
     position:relative;
@@ -221,7 +221,7 @@ a{
     height: 60px;
 }
 .video_list_each_a{
-    margin: 10px 0px;
+    margin: 15px 0px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
