@@ -50,7 +50,7 @@ canvas.height = 630;
 
 //지도 변수
 const r = 1.5;
-const color ='#74777c'
+const color ='darkgrey'
 colot_city = '#efcd67'
 space = 1.4
 
