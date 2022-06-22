@@ -217,7 +217,7 @@ a{
 }
 .video_list_each{
     width: 100%;
-    height: 55px;
+    height: 60px;
 }
 .video_list_each_a{
     margin: 10px 0px;
@@ -229,8 +229,8 @@ a{
     height: 100%;
 }
 #thumb_nail{
-    width: 90px;
-    height: 50px;
+    width: 110px;
+    height: 60px;
     margin-left:15px;
     border-radius: 10px;
     background-image: url('image/icon/ylogo.svg');
@@ -239,7 +239,7 @@ a{
 }
 .video_list_each_info{
     width: 75%;
-    height: 55px;
+    height: 100%;
     position: relative;
 }
 .video_list_each_view{
@@ -250,7 +250,7 @@ a{
     width: 100%;
     height: 30%;
     color: black;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bolder;
 
 }
@@ -265,7 +265,7 @@ a{
     overflow-y: hidden;
     color: black;
     
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 550;
 }
 
