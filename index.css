@@ -57,7 +57,7 @@ a{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
 }
 #region_info_map{
     margin-top: 15px;
