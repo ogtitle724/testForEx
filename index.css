@@ -15,11 +15,11 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
 }
 main{
-    height: 90%;
+    height: 70%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: stretch;
+    align-items: center;
 }
 header{
     height: 10%;
