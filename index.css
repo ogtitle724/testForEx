@@ -169,7 +169,8 @@ a{
 }
 #video_list_box{
     margin-top : 20px;
-    width: 570px;
+    min-width: 570px;
+    width : 80%;
     margin: 0px;
 }
 #video_window{
