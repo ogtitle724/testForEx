@@ -56,7 +56,7 @@ a{
     flex-basis: 55%;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 #region_info_map{
