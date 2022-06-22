@@ -128,7 +128,7 @@ a{
 #weather_info{
     margin : auto 0px;
     margin-left: 50px;
-    width: 110px;
+    width: 130px;
 }
 .weather_info_box1{
     height: 100px;
@@ -141,7 +141,7 @@ a{
 .weather_info_box2{
     height: 100px;
     width: 100px;
-    margin: 10px auto;
+    margin: 25px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
