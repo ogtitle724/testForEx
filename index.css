@@ -15,7 +15,7 @@ body{
     font-family: 'Noto Sans KR', sans-serif;
 }
 main{
-    height: 70%;
+    height: 90%;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
